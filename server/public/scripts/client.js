@@ -1,6 +1,6 @@
-var app = angular.module('HeroApp', ['ngRoute']);
+var heroApp = angular.module('heroApp', ['ngRoute']);
 
-app.config(['$routeProvider', function($routeProvider) {
+heroApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/heroList', {
       templateUrl: '/views/hero-list.html',
