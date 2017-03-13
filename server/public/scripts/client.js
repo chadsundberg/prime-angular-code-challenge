@@ -8,7 +8,7 @@ heroApp.config(['$routeProvider', function($routeProvider) {
       controllerAs: 'hlc'
     })
     .when('/addHero', {
-      templateUrl: '/views/hero-list.html',
+      templateUrl: '/views/add-hero.html',
       controller: 'AddHeroController',
       controllerAs: 'ahc'
     })
