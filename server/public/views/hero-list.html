@@ -1,7 +1,6 @@
 
     <div id="heroSection" class="col-md-12" ng-controller="HeroListController">
     <h2 id="pretty_header">Hero List</h2>
-    {{hlc}}
     <table>
       <tr id="offset" class="row col-xs-18">
         <th class="col-xs-3">Persona</th>
@@ -9,7 +8,7 @@
         <th class="col-xs-3">Super Power</th>
         <th class="col-xs-3">Description</th>
       </tr>
-      <tr class="row col-xs-18" ng-repeat="hero in hlc.heroList.list" class="row col-xs-12">
+      <tr class="row col-xs-18" ng-repeat="hero in hlc.heroList" class="row col-xs-12">
         <td class="col-xs-3">{{hero.persona}}</td>
         <td class="col-xs-3">{{hero.alias}}</td>
         <td class="col-xs-3">{{hero.name}}</td>
