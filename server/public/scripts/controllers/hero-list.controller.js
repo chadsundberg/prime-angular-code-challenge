@@ -3,6 +3,9 @@ heroApp.controller('HeroListController', ['$http', function($http){
     var self = this;
     self.heroList = [];
 
+    getHeroes();
+
+    function getHeroes() {
     $http({
       method: 'GET',
       url: '/heroes'
@@ -10,6 +13,18 @@ heroApp.controller('HeroListController', ['$http', function($http){
       console.log(response.data);
       self.heroList = response.data;
     });
+
+  }
+
+    self.deleteHero = function(heroID) {
+    $http({
+      method: 'DELETE',
+      url: '/heroes/'  + heroID
+    }).then(function(response){
+      console.log(response.data);
+      getHeroes();
+    });
+  }
 
 
       // getHeroes();

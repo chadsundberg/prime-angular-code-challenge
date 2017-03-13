@@ -1,3 +1,3 @@
-app.controller('AddHeroController', function(){
+heroApp.controller('AddHeroController', function(){
 
 });

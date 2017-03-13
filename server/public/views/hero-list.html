@@ -13,8 +13,7 @@
         <td class="col-xs-3">{{hero.alias}}</td>
         <td class="col-xs-3">{{hero.name}}</td>
         <td class="col-xs-3">{{hero.description}}</td>
-        <td><span class="col-xs-3" ng-show="employee.status"><button ng-click="home.deactivateEmployee(employee.id)" class="btn btn-primary">Deactivate</button></span></td>
-        <td><span class="col-xs-3" ng-hide="employee.status"><button ng-click="home.activateEmployee(employee.id)" class="btn btn-info">Activate</button></span></td>
+        <td><button ng-click="hlc.deleteHero(hero.id)" class="btn btn-primary">Delete</button></td>
       </tr>
     </table>
   </div>
