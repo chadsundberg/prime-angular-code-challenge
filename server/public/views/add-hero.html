@@ -2,6 +2,12 @@
 
 <input ng-model="ahc.newHero.persona" placeholder="Persona">
 <input ng-model="ahc.newHero.alias" placeholder="Alias">
-<input ng-model="ahc.newHero.power_id" placeholder="Power ID">
+<select ng-model="ahc.newHero.power_id" placeholder="Power ID"
+  ng-options="item.id as item.name for item in ahc.superPowers.list"></select>
 <button ng-click="ahc.spawnNewHero(ahc.newHero)">Spawn New Hero</button>
 {{ahc.newHero}}
+
+<!-- other list
+<select ng-model="ahc.newHero.power_id">
+  <option value="power.id" ng-repeat="power in ahc.superPowers.list">{{power.name}}</option>
+</select> -->

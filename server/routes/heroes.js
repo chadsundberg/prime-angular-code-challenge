@@ -37,12 +37,12 @@ router.post('/', function (req, res) {
 });
 
 router.delete('/:id', function(req, res) {
-  var heroId = req.params.id;
-  console.log('Deleting hero ID:, ', heroId);
+  var heroID = req.params.id;
+  console.log('Deleting hero ID:, ', heroID);
   pool.connect()
     .then(function (client) {
       client.query('DELETE FROM heroes WHERE id = $1',
-        [heroId])
+        [heroID])
         .then(function (result) {
           client.release();
           res.sendStatus(200);
@@ -55,13 +55,13 @@ router.delete('/:id', function(req, res) {
 });
 
 router.put('/:id', function(req, res) {
-  var heroId = req.params.id;
+  var heroID = req.params.id;
   var hero = req.body;
   console.log('Updating hero:, ', hero);
   pool.connect()
     .then(function (client) {
       client.query('UPDATE heroes SET persona = $1, alias = $2, power_id = $3 WHERE id = $4',
-        [hero.persona, hero.alias, hero.power_id, hero.id])
+        [hero.persona, hero.alias, hero.power_id, heroID])
         .then(function (result) {
           client.release();
           res.sendStatus(200);

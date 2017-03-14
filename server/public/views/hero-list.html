@@ -5,15 +5,21 @@
       <tr id="offset" class="row col-xs-18">
         <th class="col-xs-3">Persona</th>
         <th class="col-xs-3">Alias</th>
-        <th class="col-xs-3">Super Power</th>
-        <th class="col-xs-3">Description</th>
+        <th class="col-xs-3">Super Power ID</th>
+        <th class="col-xs-3">Delete</th>
       </tr>
       <tr class="row col-xs-18" ng-repeat="hero in hlc.heroList" class="row col-xs-12">
-        <td class="col-xs-3">{{hero.persona}}</td>
-        <td class="col-xs-3">{{hero.alias}}</td>
-        <td class="col-xs-3">{{hero.name}}</td>
-        <td class="col-xs-3">{{hero.description}}</td>
+        <td><input type="text" class="col-xs-3" ng-model="hero.persona"></td>
+        <td><input type="text" class="col-xs-3" ng-model="hero.alias"></td>
+        <td><select class="col-xs-3" ng-model="hero.power_id"
+                ng-options="superpower.id as superpower.name for superpower in hlc.superPowers.list">
+        </select></td>
         <td><button ng-click="hlc.deleteHero(hero.id)" class="btn btn-primary">Delete</button></td>
+        <td><button ng-click="hlc.mutateHero(hero)">Mutate</button></td>
       </tr>
     </table>
+    <p>hlc.heroList: {{hlc.heroList}}</p>
+
+    <p>hlc: {{hlc}}</p>
+
   </div>

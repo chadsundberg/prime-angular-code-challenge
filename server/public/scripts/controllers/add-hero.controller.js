@@ -1,16 +1,15 @@
-heroApp.controller('AddHeroController', ['$http', function($http){
+heroApp.controller('AddHeroController', ['$http', 'SuperpowerFactory', function($http, SuperpowerFactory){
   var self = this;
   self.testMessage = 'Can you hear me?';
+  self.superPowers = SuperpowerFactory.superPowers;
+  self.heroList = [];
 
   self.spawnNewHero = function(newHeroObject){
-    $http({
-      method: 'POST',
-      url: '/heroes',
-      data: newHeroObject
-    }).then(function(response){
-    console.log(response);
-    
-  });
-}
+    $http.post('/heroes', newHeroObject).then(function(response){
+        console.log(response);
+      });
+    }
+
+
 
 }]);
